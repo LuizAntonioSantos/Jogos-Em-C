@@ -1,14 +1,22 @@
 #include <stdio.h>
 #include <string.h>
 
+void abertura(){
+    printf("******************************\n");
+    printf("* Bem-Vindo ao Jogo da Forca *\n");
+    printf("******************************\n");
+}
+
+
 int main(){
     char palavraSecret[20], chutes[26];
     sprintf(palavraSecret, "MELANCIA");
     int acertou = 0,enforcou = 0, tentativas = 0;
+
     
     do {
         // strlen vai contar o numero de letras no array até encontrar o final [/0]
-        for (int i = 0; i < strlen(palavraSecret); i++){
+        for (int i = 0; strlen(palavraSecret) > i; i++){
             int achou = 0;
 
             for (int j = 0; j < tentativas; j++){
